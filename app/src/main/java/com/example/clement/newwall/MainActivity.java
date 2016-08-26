@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         imageView=(ImageView)findViewById(R.id.imageView);
         button.setOnClickListener(new View.OnClickListener() {
 
-            RequestQueue requestQueue= Volley.newRequestQueue(MainActivity.this);
+           // RequestQueue requestQueue= Volley.newRequestQueue(MainActivity.this);
             @Override
             public void onClick(View v) {
 
@@ -47,17 +47,18 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Bitmap response) {
                                 imageView.setImageBitmap(response);
-                                 requestQueue.stop();
+                                // requestQueue.stop();
                     }
                 }, 0, 0, ImageView.ScaleType.CENTER, null, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(MainActivity.this,"some error occured",Toast.LENGTH_SHORT).show();
-                        requestQueue.stop();
+                        //requestQueue.stop();
 
                     }
                 });
-                requestQueue.add(imageRequest);
+                //requestQueue.add(imageRequest);
+                Singleton.getmInstance(MainActivity.this).addtorequestQueue(imageRequest);
             }
         });
     }
