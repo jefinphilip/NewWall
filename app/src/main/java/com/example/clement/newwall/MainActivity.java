@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     ImageView imageView;
     String imgFrmServer = "http://192.168.1.4/one.jpg";
+    TextView textView1;
+    TextView textView2;
 
 
     @Override
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         button= (Button)findViewById(R.id.btn);
         imageView=(ImageView)findViewById(R.id.imageView);
+        textView1=(TextView)findViewById(R.id.name);
+        textView2=(TextView)findViewById(R.id.age);
         button.setOnClickListener(new View.OnClickListener() {
 
            // RequestQueue requestQueue= Volley.newRequestQueue(MainActivity.this);
